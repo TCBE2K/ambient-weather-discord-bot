@@ -3,7 +3,7 @@ A simple weather bot using the Ambient Weather API in Python
 
 ## Setup
 
-1. Create the .env file with the following syntax:
+1. Create the .env file with the following syntax, and set the variables:
 ```
 DISCORD_TOKEN=
 AMBIENT_WEATHER_API_KEY=
