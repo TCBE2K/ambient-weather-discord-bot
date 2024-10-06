@@ -26,6 +26,16 @@ def get_temp():
     temperature_fahrenheit = data[0]['tempf']
     return temperature_fahrenheit
 
+def get_feels_like():
+    # Make the HTTP request
+    response = requests.get(f'https://rt.ambientweather.net/v1/devices/{AMBIENT_WEATHER_MAC_ADDRESS}?apiKey={AMBIENT_WEATHER_API_KEY}&applicationKey={AMBIENT_WEATHER_APP_KEY}&limit=1')
+    # Parse the JSON response
+    data = response.json()
+
+    # Access the temperature value
+    feels_like = data[0]['feelsLike']
+    return feels_like
+
 bot = commands.Bot(command_prefix="/", intents = discord.Intents.all())
 
 @bot.event
@@ -46,15 +56,9 @@ async def temp(ctx: commands.Context):
     await ctx.send(get_temp(), ephemeral=True)
 
 @bot.hybrid_command(name="feels_like", description="Outputs what it feels like outside")
-async def feels_like(ctx: commands.Context):
-    # Make the HTTP request
-    response = requests.get(f'https://rt.ambientweather.net/v1/devices/{AMBIENT_WEATHER_MAC_ADDRESS}?apiKey={AMBIENT_WEATHER_API_KEY}&applicationKey={AMBIENT_WEATHER_APP_KEY}&limit=1')
-    # Parse the JSON response
-    data = response.json()
-
-    # Access the temperature value
-    feels_like = data[0]['feelsLike']
-    await ctx.send(feels_like, ephemeral=True)
+async def temp(ctx: commands.Context):    
+    # Call "get_feels_like"
+    await ctx.send(get_feels_like(), ephemeral=True)
 
 
 
