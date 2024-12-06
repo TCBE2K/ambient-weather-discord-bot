@@ -59,7 +59,4 @@ async def temp(ctx: commands.Context):
     # Call "get_feels_like"
     await ctx.send(get_feels_like(), ephemeral=True)
 
-
-
-
 bot.run(DISCORD_TOKEN)
