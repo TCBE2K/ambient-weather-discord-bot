@@ -22,14 +22,14 @@ python -m venv bot-env
 ```
 pip3 install -r requirements.txt
 ```
-4. Create the discord bot:
+3. Create the discord bot:
 Go to [the discord bot developer website](https://discord.com/developers/applications) and make a bot.
 
-4.1. Give the bot [all intents](https://i.imgur.com/cU09rZn.png)
+3.1. Give the bot [all intents](https://i.imgur.com/cU09rZn.png)
 
-4.2 Invite the bot to your server by [creating an install link](https://i.imgur.com/ELIu1IU.png)
+3.2 Invite the bot to your server by [creating an install link](https://i.imgur.com/ELIu1IU.png)
 
-5. Start the bot 
+4. Start the bot 
 ```
 python main.py
 ```
