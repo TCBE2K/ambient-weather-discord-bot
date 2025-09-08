@@ -15,7 +15,7 @@ AMBIENT_WEATHER_MAC_ADDRESS=
 ```bash
 # Create the environment with the name "bot-env"
 python -m venv bot-env
-# Acrivate the environment using the activate script
+# Activate the environment using the activate script
 ./bot-env\Scripts\activate
 ```
 2.2: Install the requirements:
